@@ -1,0 +1,25 @@
+
+{
+  "name": "lululeh",
+  "version": "1.0.0",
+  "description": "LuLuLeh web scanner",
+  "main": "backend/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "vite  --config vite.config.js",
+    "build": "vite build frontend",
+    "server": "node backend/server.js",
+    "server:dev": "nodemon backend/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "multer": "^2.5.0",
+    "openai": "^7.47.0"
+  },
+  "devDependencies": {
+    "vite": "^8.3.5",
+    "nodemon": "^3.1.14"
+  }
+}

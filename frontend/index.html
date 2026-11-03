@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="#scan">home</a>
+            <a href="#scan">scan</a>
+        </nav>
+
+        <div>
+            <form action="">
+                <input type="file" accept="image/*" capture="user">
+            </form>
+        </div>
+        <div id="camera-container">
+            <video width="100%" id="camera" autoplay playsinline></video>
+
+            <button id="start-camera">Buka Kamera</button>
+            <button id="capture">Ambil Foto</button>
+
+            <canvas id="canvas" hidden></canvas>
+        </div>
+    </div>
+
+    <script src="script/camera.js"></script>
+</body>
+
+</html>

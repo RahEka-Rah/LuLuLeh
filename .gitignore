@@ -1,5 +1,8 @@
 node_modules/
 
+uploads/
+.vscode/
+
 .env
 .env.*
 !.env.example
