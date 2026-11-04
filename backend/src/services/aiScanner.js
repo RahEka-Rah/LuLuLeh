@@ -1,6 +1,7 @@
 const OpenAI = require('openai');
 const { readFile } = require('fs/promises');
 
+const prompt = require("./prompt")
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
@@ -19,34 +20,7 @@ const start = performance.now();
         messages: [
             {
                 role: 'system',
-                content: `Kamu adalah AI pendeteksi dan edukator sampah.
-
-Analisis gambar yang diberikan dan kembalikan hasil dalam JSON valid saja.
-
-Gunakan struktur berikut:
-
-{
-    "success": true,
-    "nama_benda": "Nama benda",
-    "jenis_sampah": "Nama jenis sampah",
-    "kategori": "organik/anorganik/B3",
-    "tingkat_keyakinan": "tinggi/sedang/rendah",
-    "deskripsi": "Penjelasan benda dan karakteristiknya maxsimal 2 kalimat",
-
-    "pemanfaatan": [
-        "Ide pemanfaatan pertama",
-        "Ide pemanfaatan kedua"
-    ],
-    "saran_pemilahan": "Cara membuang atau memilah sampah dengan benar"
-}
-
-Aturan:
-- Gunakan bahasa Indonesia.
-- Jangan mengarang identitas benda jika gambar tidak jelas.
-- Jika bukan sampah atau objek tidak dapat dikenali, success bernilai false.
-- Kategori harus organik, anorganik, B3, atau tidak_diketahui.
-- Tingkat keyakinan harus berdasarkan kejelasan gambar.
-- Jangan menambahkan Markdown atau teks di luar JSON.`
+                content: prompt
             },
             {
                 role: 'user',

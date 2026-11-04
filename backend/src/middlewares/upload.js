@@ -1,7 +1,8 @@
 const multer = require('multer');
+const path = require('path');
 
 const upload = multer({
-    dest: 'uploads/',
+    dest: path.resolve(__dirname, '../../uploads/'),
     limits: {
         fileSize: 3 * 1024 * 1024,
         files: 1

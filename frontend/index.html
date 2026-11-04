@@ -1,35 +1,94 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lululeh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://googleapis.com" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+<style type="text/tailwindcss">
+    @theme {
+            --font-sans: 'Inter', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;  
+        }   
+    </style>
 
-<body>
-    <div class="container">
-        <nav>
-            <a href="#scan">home</a>
-            <a href="#scan">scan</a>
+<body class="w-screen">
+    <div class="w-full max-h-20 ">
+
+        <nav class="w-full border-b-1 border-gray-800 flex justify-around py-3  items-center stiky">
+            <div>
+                <h1 class="font-bold italic text-2xl">LuluLeh</h1>
+            </div>
+            <span class="bg-gray-950 px-2 py-2 rounded-full text-sm text-white" href="camera">Mulai scan &rarr;</span>
         </nav>
 
-        <div>
-            <form action="">
-                <input type="file" accept="image/*" capture="user">
-            </form>
+        <div class="w-full p-3 flex flex-col items-center ">
+            <div class="max-w-lg mt-5">
+                <h1 class="font-bold text-6xl">LuLuLeh</h1>
+                <h3 class="font-semibold text-3xl mt-2">Kenali sampah , jaga bumi</h3>
+                <p class="mt-10">Scan sampah kamu disini dapatkan informasi pemilahan dan kiat kiat menarik</p>
+                <div class="mt-5 full  ">
+                    <a href="#camera" >
+                        <span
+                            class="inline-flex items-center gap-2 bg-gray-950 px-4 py-2 rounded-full text-white text-sm font-medium tracking-wide shadow-sm hover:bg-gray-900 transition-colors cursor-pointer">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-90">
+                                <path
+                                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z" />
+                                <circle cx="12" cy="13" r="3" />
+                            </svg>
+                            <span>Mulai scan &rarr;</span>
+                        </span>
+    
+                    </a>
+    
+                </div>
+            </div>
+            <div>
+                <img src="" class="w-3/4" alt="">
+            </div>
         </div>
-        <div id="camera-container">
-            <video width="100%" id="camera" autoplay playsinline></video>
+        <main id="scanner">
 
-            <button id="start-camera">Buka Kamera</button>
-            <button id="capture">Ambil Foto</button>
+            <section id="camera-container">
+                <video id="camera" autoplay playsinline muted></video>
 
-            <canvas id="canvas" hidden></canvas>
-        </div>
+                <canvas id="canvas" hidden></canvas>
+
+                <div id="camera-button">
+                    <button id="start-camera">Buka Kamera</button>
+                    <button id="capture" disabled>Ambil Foto</button>
+                </div>
+
+                <div id="preview-container" hidden>
+                    <img id="preview" alt="Preview gambar">
+
+                    <div>
+                        <button id="scan" disabled>Cek Sampah</button>
+                        <button id="retake">Foto Ulang</button>
+                    </div>
+                </div>
+            </section>
+
+            <section aria-live="polite" aria-label="Hasil scan">
+                <div id="result"></div>
+            </section>
+
+        </main>
     </div>
 
-    <script src="script/camera.js"></script>
+    <script type="module" src="script/camera.js"></script>
+    <script type="module" src="script/scan.js"></script>
 </body>
 
 </html>
