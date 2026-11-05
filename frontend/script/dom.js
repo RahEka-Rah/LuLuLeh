@@ -15,6 +15,7 @@ export const el = {
     previewContainer: $('preview-container'),
     scan: $('scan'),
     result: $('result'),
+    choice: $('choice'),
 };
 
 export function escapeHtml(value) {

@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lululeh</title>
+        <link rel="icon" href="data:,">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="https://googleapis.com" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <style type="text/tailwindcss">
@@ -20,25 +20,36 @@
         html {
             scroll-behavior: smooth;  
         }   
+        #earth-container {
+            width: 100%;
+            height: 360px;
+        }
     </style>
 
 <body class="w-screen">
     <div class="w-full max-h-20 ">
 
-        <nav class="w-full border-b-1 border-gray-800 flex justify-around py-3  items-center stiky">
+        <nav class="w-full border-b-1 border-gray-800 flex  justify-around py-3  items-center stiky">
             <div>
-                <h1 class="font-bold italic text-2xl">LuluLeh</h1>
+                <img src="asset/logos.jpeg" class="h-12 " alt="">
             </div>
-            <span class="bg-gray-950 px-2 py-2 rounded-full text-sm text-white" href="camera">Mulai scan &rarr;</span>
+            <a href="#camera">
+                <span class="bg-gray-950 px-3 py-2 rounded-full text-sm text-white" href="camera">Mulai scan
+                    &rarr;</span>
+            </a>
+
         </nav>
 
-        <div class="w-full p-3 flex flex-col items-center ">
-            <div class="max-w-lg mt-5">
-                <h1 class="font-bold text-6xl">LuLuLeh</h1>
-                <h3 class="font-semibold text-3xl mt-2">Kenali sampah , jaga bumi</h3>
+        <div class="w-full p-3 flex flex-wrap justify-center items-center  ">
+            <div class="max-w-xl mt-5 ">
+                <h1 class="font-bold text-6xl border-1 m-1 flex">
+                    <p class="text-blue-950">LuLu</p>
+                    <p class="text-orange-400">Leh</p>
+                </h1>
+                <h3 class="font-semibold text-3xl mt-2  border-1 m-1">Kenali sampah , jaga bumi</h3>
                 <p class="mt-10">Scan sampah kamu disini dapatkan informasi pemilahan dan kiat kiat menarik</p>
                 <div class="mt-5 full  ">
-                    <a href="#camera" >
+                    <a href="#camera">
                         <span
                             class="inline-flex items-center gap-2 bg-gray-950 px-4 py-2 rounded-full text-white text-sm font-medium tracking-wide shadow-sm hover:bg-gray-900 transition-colors cursor-pointer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -49,46 +60,67 @@
                             </svg>
                             <span>Mulai scan &rarr;</span>
                         </span>
-    
+
                     </a>
-    
+
                 </div>
             </div>
-            <div>
-                <img src="" class="w-3/4" alt="">
+            <div class="w-90 h-90 mt-5 border border-black">
+                <div id="earth-container" class="w-full h-full"></div>
             </div>
         </div>
-        <main id="scanner">
+        <main id="scanner" class="w-full mt-10 gap-5   p-3 flex flex-wrap  justify-center items-center ">
 
-            <section id="camera-container">
-                <video id="camera" autoplay playsinline muted></video>
+            <section id="camera-container w-md border-1     ">
 
-                <canvas id="canvas" hidden></canvas>
-
-                <div id="camera-button">
-                    <button id="start-camera">Buka Kamera</button>
-                    <button id="capture" disabled>Ambil Foto</button>
+                <div>
+                    <h3 class="text-xl font-semibold">Buka kamera untuk memindai</h3>
                 </div>
 
-                <div id="preview-container" hidden>
-                    <img id="preview" alt="Preview gambar">
+                <div id="camera-button" class="border-1 w-full flex mt-4 ">
+                    <button id="start-camera" class="w-1/2  p-2 bg-gray-900 text-white">Buka Kamera</button>
+                    <button id="capture" class="w-1/2 border-1 p-2">Ambil Foto</button>
+                </div>
 
-                    <div>
-                        <button id="scan" disabled>Cek Sampah</button>
-                        <button id="retake">Foto Ulang</button>
+                <div id="preview-container" class="w-full" hidden>
+
+                    <div class="border-1 w-full flex mt-4 ">
+                        <button id="scan" class="w-1/2  p-2 bg-gray-900 text-white " disabled>Cek Sampah</button>
+                        <button id="retake" class="w-1/2 border-1 p-2">Foto Ulang</button>
                     </div>
+                    <img id="preview" alt="Preview gambar" class="w-sm border-1 ">
                 </div>
-            </section>
+                <video id="camera" class="w-sm " autoplay playsinline muted></video>
 
-            <section aria-live="polite" aria-label="Hasil scan">
-                <div id="result"></div>
+                <canvas id="canvas" class="border-1 w-sm hidden"></canvas>
+
+
+
             </section>
+            <div aria-live="polite" aria-label="Hasil scan" class="w-md ">
+                <div id="result" class="w-full border-1 p-2 hidden">
+
+
+        
+
+                </div>
+            </div>
+
+
+
 
         </main>
+        <div class="w-full flex flex-wrap justify-center items-center gap-5 p-3 mt-10 ">
+            <div id="choice" class="w-md  p-2 hidden"> </div>
+        </div>
+        <footer class="w-full flex justify-center border-t-1 py-6 bg-gray-300 mt-5">
+            <p class="text-sm ">logo by abhii cihuy</p>
+        </footer>
     </div>
 
     <script type="module" src="script/camera.js"></script>
     <script type="module" src="script/scan.js"></script>
+    <script type="module" src="script/earth.js"></script>
 </body>
 
 </html>
