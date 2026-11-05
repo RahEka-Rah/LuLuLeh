@@ -23,8 +23,9 @@ el.scan.addEventListener('click', async () => {
         }
 
         renderResult(data);
+
     } catch (error) {
-        console.error(error);
+
         renderError(error.message);
     } finally {
         el.scan.disabled = false;

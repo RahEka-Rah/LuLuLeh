@@ -2,7 +2,7 @@
 
 const $ = (id) => document.getElementById(id);
 
-export const API_URL = 'http://localhost:5173/api/detect';
+export const API_URL = import.meta.env.VITE_API_BACKEND;
 
 export const el = {
     video: $('camera'),

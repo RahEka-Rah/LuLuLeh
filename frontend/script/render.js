@@ -68,7 +68,7 @@ function renderSuccessResult(item) {
 export function renderError(message) {
   el.result.innerHTML = `
       <section role="alert">
-        <p>Gagal!</p>
+        <p class="text-red-800">Gagal!</p>
         <p>${esc(message || 'Gagal memproses data')}</p>
       </section>`;
   el.choice.innerHTML = '';

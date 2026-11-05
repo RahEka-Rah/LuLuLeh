@@ -5,7 +5,7 @@ const prompt = require("./prompt")
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
-    baseURL: 'https://api.aivene.com/v1'
+    baseURL: process.env.BASE_URL_AIVENE
 });
 const detectWaste = async (image) => {
     const imageBuffer = await readFile(image.path);
@@ -13,7 +13,6 @@ const detectWaste = async (image) => {
 
     const imageUrl = `data:${image.mimetype};base64,${base64}`;
 
-const start = performance.now();
 
     const response = await client.chat.completions.create({
         model: 'gemini-3.5-flash-lite',
@@ -41,13 +40,10 @@ const start = performance.now();
         response_format: {
             type: 'json_object'
         }
-        
+
     });
-    console.log(
-    "Waktu AI:",
-    ((performance.now() - start) / 1000).toFixed(2),
-    "detik"
-);
+
+
     return JSON.parse(response.choices[0].message.content);
 };
 

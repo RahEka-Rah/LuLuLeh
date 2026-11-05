@@ -26,15 +26,15 @@
         }
     </style>
 
-<body class="w-screen">
-    <div class="w-full max-h-20 ">
+<body class="w-screen ">
+    <div class="w-full  ">
 
-        <nav class="w-full border-b-1 border-gray-800 flex  justify-around py-3  items-center stiky">
+        <nav class="w-full border-b-1 border-gray-800 flex  justify-around py-3  items-center sticky top-0 bg-white z-20">
             <div>
                 <img src="asset/logos.jpeg" class="h-12 " alt="">
             </div>
             <a href="#camera">
-                <span class="bg-gray-950 px-3 py-2 rounded-full text-sm text-white" href="camera">Mulai scan
+                <span class="bg-gray-950 px-3 py-2 rounded-full text-md text-white" href="camera">Mulai scan
                     &rarr;</span>
             </a>
 
@@ -42,16 +42,16 @@
 
         <div class="w-full p-3 flex flex-wrap justify-center items-center  ">
             <div class="max-w-xl mt-5 ">
-                <h1 class="font-bold text-6xl border-1 m-1 flex">
+                <h1 class="font-bold text-6xl m-1 flex">
                     <p class="text-blue-950">LuLu</p>
                     <p class="text-orange-400">Leh</p>
                 </h1>
-                <h3 class="font-semibold text-3xl mt-2  border-1 m-1">Kenali sampah , jaga bumi</h3>
+                <h3 class="font-semibold text-3xl mt-2   m-1">Kenali sampah , jaga bumi</h3>
                 <p class="mt-10">Scan sampah kamu disini dapatkan informasi pemilahan dan kiat kiat menarik</p>
                 <div class="mt-5 full  ">
                     <a href="#camera">
                         <span
-                            class="inline-flex items-center gap-2 bg-gray-950 px-4 py-2 rounded-full text-white text-sm font-medium tracking-wide shadow-sm hover:bg-gray-900 transition-colors cursor-pointer">
+                            class="inline-flex items-center gap-2 bg-gray-950 px-4 py-2 rounded-full text-white text-md font-medium tracking-wide shadow-md hover:bg-gray-900 transition-colors cursor-pointer">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-90">
                                 <path
@@ -65,7 +65,7 @@
 
                 </div>
             </div>
-            <div class="w-90 h-90 mt-5 border border-black">
+            <div class="w-90 h-90 mt-5 ">
                 <div id="earth-container" class="w-full h-full"></div>
             </div>
         </div>
@@ -79,32 +79,30 @@
 
                 <div id="camera-button" class="border-1 w-full flex mt-4 ">
                     <button id="start-camera" class="w-1/2  p-2 bg-gray-900 text-white">Buka Kamera</button>
-                    <button id="capture" class="w-1/2 border-1 p-2">Ambil Foto</button>
+                    <button id="capture" class="w-1/2  p-2">Ambil Foto</button>
                 </div>
 
                 <div id="preview-container" class="w-full" hidden>
 
                     <div class="border-1 w-full flex mt-4 ">
                         <button id="scan" class="w-1/2  p-2 bg-gray-900 text-white " disabled>Cek Sampah</button>
-                        <button id="retake" class="w-1/2 border-1 p-2">Foto Ulang</button>
+                        <button id="retake" class="w-1/2  p-2">Foto Ulang</button>
                     </div>
-                    <img id="preview" alt="Preview gambar" class="w-sm border-1 ">
+                    <img id="preview" alt="Preview gambar" class="w-md ">
                 </div>
-                <video id="camera" class="w-sm " autoplay playsinline muted></video>
+                <video id="camera" class="w-md " autoplay playsinline muted></video>
 
-                <canvas id="canvas" class="border-1 w-sm hidden"></canvas>
+                <canvas id="canvas" class=" w-md hidden"></canvas>
 
 
 
             </section>
-            <div aria-live="polite" aria-label="Hasil scan" class="w-md ">
-                <div id="result" class="w-full border-1 p-2 hidden">
+                <div id="result" aria-live="polite" aria-label="Hasil scan" class="w-md  p-2 hidden">
 
 
         
 
                 </div>
-            </div>
 
 
 
@@ -113,11 +111,12 @@
         <div class="w-full flex flex-wrap justify-center items-center gap-5 p-3 mt-10 ">
             <div id="choice" class="w-md  p-2 hidden"> </div>
         </div>
-        <footer class="w-full flex justify-center border-t-1 py-6 bg-gray-300 mt-5">
-            <p class="text-sm ">logo by abhii cihuy</p>
+        <footer class=" bottom-0 w-full flex  flex-col justify-center items-center border-t-1 py-6 bg-gray-300 mt-5">
+            <p class="text-md ">© 2026 Bali digifest. All Rights Reserved.</p>
+            <p class="text-md ">logo by abhii cihuy</p>
         </footer>
     </div>
-
+    
     <script type="module" src="script/camera.js"></script>
     <script type="module" src="script/scan.js"></script>
     <script type="module" src="script/earth.js"></script>
