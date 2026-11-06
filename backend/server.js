@@ -3,8 +3,8 @@ require('dotenv').config({
 });
 const app = require('./src/app');
 
-const PORT = 5173;
+const PORT = process.env.PORT_BACKEND;
 
 app.listen(PORT, () => {
-    console.log(`LuLuLeh running on http://localhost:${PORT}`);
+    console.log(`LuLuLeh running on ${process.env.URL_BACKEND}`);
 });
