@@ -176,4 +176,4 @@ Gemini Model (3.5 Flash Lite): Model AI untuk analisis dan klasifikasi objek cit
 ## Team Members
 Ida Bagus Gde Dharma siwi Bhagaskara sebagai pembuat proposal dan dokumentasi
 I Gusti Ngurah Putu Eka Jumantana sebagai pembuat website dan semua fitur"nya
-I Kadek Sanjaya sebagai pengurus API AI dan edit vidio
+I Kadek Sanjaya sebagai pengurus API AI 
