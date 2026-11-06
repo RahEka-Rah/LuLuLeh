@@ -3,7 +3,7 @@ lomba digifest 2026 Ai web inovation
 
 
 ## Description
-lululeh adalah Website pemilah sampah berbasis AI adalah platform web yang dikombinasikan dengan AI sebagai inti atau otak yang memproses data yang diberikan user dalam bentuk foto dan akan dipindai lalu dikategorikan sesuai dengan jenis sampah yang di potret oleh pengguna.
+lululeh adalah Website pemilah sampah yang dikombinasikan dengan AI sebagai inti atau otak yang memproses data yang diberikan user dalam bentuk foto dan akan dipindai lalu dikategorikan sesuai dengan jenis sampah yang di potret oleh pengguna.
 Inovasi sistem ini bersumber dari kenyataan di masyarakat yang sering kali kesulitan atau enggan memilah sampah karena rendahnya literasi pengelolaan limbah serta hambatan teknis untuk menginstal aplikasi khusus di gawai mereka yang kapasitas penyimpanannya terbatas. Melalui pendekatan berbasis browser web, sistem ini menghadirkan solusi yang praktis dan menjembatani kesenjangan tersebut, di mana warga dapat langsung memindai sampah rumah tangga dan menerima edukasi instan tanpa perlu repot mengunduh aplikasi tambahan.
 
 ## Problem & Target User
@@ -31,6 +31,9 @@ Hosting: boc.co.id
 Peran AI: Bertindak sebagai inti (otak) sistem untuk melakukan klasifikasi citra (Image Classification / Computer Vision).
 
 Pemrosesan Data: Memproses data visual (foto) yang diunggah pengguna, mendeteksi objek sampah, lalu menentukan kategori jenis sampahnya secara otomatis.
+
+## AI asisten
+ChatGPT, Gemini , Claude , Github Copilot
 
 ## Architecture / Data Flow
 Input: Pengguna mengambil foto sampah rumah tangga melalui antarmuka browser web lululeh.
