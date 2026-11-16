@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model users {
+  user_id        Int        @id @default(autoincrement())
+  username       String     @unique @db.VarChar(100)
+  password       String     @db.VarChar(255)
+  user_role      user_role? @default(user)
+  account_create DateTime?  @default(now()) @db.DateTime(0)
+  status         status_account? @default(active)  
+  posts          posts[]
+}
+
+model posts {
+  post_id       Int          @id @default(autoincrement())
+  user_id       Int
+  post_create   DateTime?    @default(now()) @db.DateTime(0)
+  image         String       @db.VarChar(255)
+  caption       String?      @db.Text
+  location_name String?      @db.VarChar(150)
+  latitude      Decimal      @db.Decimal(10, 8)
+  longitude     Decimal      @db.Decimal(11, 8)
+  status        post_status? @default(unverified)
+  user          users        @relation(fields: [user_id], references: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+}
+
+enum user_role {
+  user
+  admin
+}
+
+enum status_account {
+  active
+  inactive
+}
+enum post_status {
+  unverified
+  verified
+  rejected
+}

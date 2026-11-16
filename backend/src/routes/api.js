@@ -1,21 +1,39 @@
 const express = require('express');
 const router = express.Router();
 
-const scanLimiter = require('../middlewares/rateLimiter');
+
+
 // middlewares
-const upload = require('../middlewares/upload');
+const scanLimiter = require('../middlewares/rateLimiter');
+
+const session = require('../middlewares/session');
 
 // controller
-const detectController = require('../controllers/detectController');
 
+// new routing
+const detect = require('../modules/detect/detectRoute');
+const chat = require('../modules/chat/chatRoute');
+// const post = require('../modules/post/postRoute');
+
+
+router.use(session);
+
+
+// new routing
+
+router.use('/detect',scanLimiter , detect);
+router.use('/chat' ,scanLimiter,chat)
+
+
+// old routing 
 router.get('/health',scanLimiter, (req, res) => {
     res.json({
-        success: 'true',
+        success: true,
         message: 'Hello world'
     });
 });
 
-router.post('/detect',scanLimiter,  upload, detectController.detect);
+
 
 
 module.exports = router;

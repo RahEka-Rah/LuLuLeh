@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 const { readFile } = require('fs/promises');
 
-const prompt = require("./prompt")
+const prompt = require("../prompt/scanPrompt")
 
 const client = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
