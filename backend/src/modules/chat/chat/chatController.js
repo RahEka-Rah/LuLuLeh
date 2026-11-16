@@ -33,7 +33,6 @@ exports.chat = async (req, res) => {
             data: answer.data
         })
     } catch (error) {
-        console.log(error)
         res.status(502).json({
             success: false,
             message: 'Gagal menjawab pertanyaan'

@@ -11,6 +11,7 @@ model users {
   user_id        Int        @id @default(autoincrement())
   username       String     @unique @db.VarChar(100)
   password       String     @db.VarChar(255)
+  email          String?    @db.VarChar(255)
   user_role      user_role? @default(user)
   account_create DateTime?  @default(now()) @db.DateTime(0)
   status         status_account? @default(active)  
