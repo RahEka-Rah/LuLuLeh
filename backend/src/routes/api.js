@@ -13,6 +13,9 @@ const session = require('../middlewares/session');
 // new routing
 const detect = require('../modules/detect/detectRoute');
 const chat = require('../modules/chat/chatRoute');
+const auth = require('../modules/auth/authRoute');
+
+
 // const post = require('../modules/post/postRoute');
 
 
@@ -23,6 +26,7 @@ router.use(session);
 
 router.use('/detect',scanLimiter , detect);
 router.use('/chat' ,scanLimiter,chat)
+router.use('/auth' ,scanLimiter,auth)
 
 
 // old routing 
