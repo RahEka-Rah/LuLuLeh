@@ -2,7 +2,7 @@ const prisma = require('../../../config/prisma')
 const bcrypt = require('bcryptjs');
 
 const createAccount = async (req, res) => {
-    try {
+    // try {
         const { username, password, email } = req.body;
 
         const existingUser = await prisma.users.findFirst({
@@ -41,12 +41,12 @@ const createAccount = async (req, res) => {
                 email: newUser.email
             }
         });
-    } catch (error) {
-        return res.status(500).json({
-            success: false,
-            message: "Terjadi kesalahan pada server."
-        });
-    }
+    // } catch (error) {
+    //     return res.status(500).json({
+    //         success: false,
+    //         message: "Terjadi kesalahan pada server."
+    //     });
+    // }
 
 
 
